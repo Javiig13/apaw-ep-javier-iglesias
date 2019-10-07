@@ -8,17 +8,18 @@ notifications:
   email:
     recipients:
       - javieriglesiaslopez13@gmail.com
+
 script:
-  #Test unitario y de integracion con cobertura
+  #Test unitario y de integracion con cobertura (jacoco)
   - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
 
   #SONARCLOUD
   - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-javiig13 -Dsonar.login=$SONAR
-  #Deploy https://apaw-ep-javier-iglesias.herokuapp.com
-  deploy:
-    provider: heroku
-    api_key:
-      secure: $HEROKU
-    on:
-      branch: master
-    app: apaw-ep-javier-iglesias
+
+#Deploy https://iwvg-ecosystem.herokuapp.com/api
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU
+  on:
+    branch: master
