@@ -10,14 +10,19 @@ import org.springframework.web.bind.annotation.*;
 public class OfficeResource {
 
     static final String OFFICES = "/offices";
-    private static final String ID_ID = "/{id}";
-    private static final String SQUARE_METERS = "/squareMeters";
+    static final String ID_ID = "/{id}";
+    static final String SQUARE_METERS = "/squareMeters";
 
     private OfficeBusinessController officeBusinessController;
 
     @Autowired
     public OfficeResource(OfficeBusinessController officeBusinessController) {
         this.officeBusinessController = officeBusinessController;
+    }
+
+    @GetMapping(value = ID_ID + SQUARE_METERS)
+    public OfficeDto readSquareMeters(@PathVariable String id) {
+        return this.officeBusinessController.readSquareMeters(id);
     }
 
     @PostMapping

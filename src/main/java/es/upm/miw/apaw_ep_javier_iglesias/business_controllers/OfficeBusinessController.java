@@ -33,4 +33,8 @@ public class OfficeBusinessController {
     private Office findOfficeById(String id) {
         return this.officeDao.findById(id).orElseThrow(() -> new NotFoundException("Office id: " + id));
     }
+
+    public OfficeDto readSquareMeters(String id) {
+        return new OfficeDto(this.findOfficeById(id));
+    }
 }
