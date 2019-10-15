@@ -21,6 +21,10 @@ public class Office {
         return squareMeters;
     }
 
+    public void setSquareMeters(Integer squareMeters) {
+        this.squareMeters = squareMeters;
+    }
+
     @Override
     public String toString() {
         return "Office{" +
