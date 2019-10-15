@@ -7,13 +7,13 @@ public class OfficeDto {
 
     private String id;
 
-    private Integer squareMeters;
+    private Double squareMeters;
 
     public OfficeDto() {
         //empty
     }
 
-    public OfficeDto(Integer squareMeters) {
+    public OfficeDto(Double squareMeters) {
         this.squareMeters = squareMeters;
     }
 
@@ -30,16 +30,16 @@ public class OfficeDto {
         this.id = id;
     }
 
-    public Integer getSquareMeters() {
+    public Double getSquareMeters() {
         return squareMeters;
     }
 
-    public void setSquareMeters(Integer squareMeters) {
+    public void setSquareMeters(Double squareMeters) {
         this.squareMeters = squareMeters;
     }
 
     public void validate() {
-        if (squareMeters < 0) {
+        if (squareMeters == null || squareMeters <= 0) {
             throw new BadRequestException("The office has incorrect data.");
         }
     }

@@ -7,9 +7,9 @@ public class Office {
     @Id
     private String id;
 
-    private Integer squareMeters;
+    private Double squareMeters;
 
-    public Office(Integer squareMeters) {
+    public Office(Double squareMeters) {
         this.squareMeters = squareMeters;
     }
 
@@ -17,7 +17,7 @@ public class Office {
         return id;
     }
 
-    public Integer getSquareMeters() {
+    public Double getSquareMeters() {
         return squareMeters;
     }
 
