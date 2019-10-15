@@ -7,13 +7,13 @@ public class OfficeDto {
 
     private String id;
 
-    private Double squareMeters;
+    private Integer squareMeters;
 
     public OfficeDto() {
         //empty
     }
 
-    public OfficeDto(Double squareMeters) {
+    public OfficeDto(Integer squareMeters) {
         this.squareMeters = squareMeters;
     }
 
@@ -30,11 +30,11 @@ public class OfficeDto {
         this.id = id;
     }
 
-    public Double getSquareMeters() {
+    public Integer getSquareMeters() {
         return squareMeters;
     }
 
-    public void setSquareMeters(Double squareMeters) {
+    public void setSquareMeters(Integer squareMeters) {
         this.squareMeters = squareMeters;
     }
 
