@@ -5,7 +5,6 @@ import es.upm.miw.apaw_ep_javier_iglesias.documents.Internal;
 import es.upm.miw.apaw_ep_javier_iglesias.exceptions.BadRequestException;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorDto {
@@ -75,7 +74,7 @@ public class DoctorDto {
         return internals;
     }
 
-    public void setInternals(ArrayList<Internal> internals) {
+    public void setInternals(List<Internal> internals) {
         this.internals = internals;
     }
 
