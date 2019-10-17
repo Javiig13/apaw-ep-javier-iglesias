@@ -79,8 +79,7 @@ public class DoctorDto {
     }
 
     public void validate() {
-        if (name.isEmpty() || collegiateDate.isAfter(LocalDateTime.now()) ||
-                collegiateNumber.isEmpty() || internals.isEmpty()) {
+        if (name.isEmpty() || collegiateDate.isAfter(LocalDateTime.now()) || collegiateNumber.isEmpty()) {
             throw new BadRequestException("Incomplete DoctorDto. ");
         }
     }

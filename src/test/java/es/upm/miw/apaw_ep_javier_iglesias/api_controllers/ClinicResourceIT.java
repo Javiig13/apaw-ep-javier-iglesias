@@ -21,12 +21,12 @@ class ClinicResourceIT {
     void testCreate() {
         ClinicDto clinicDto = this.webTestClient
                 .post().uri(ClinicResource.CLINICS)
-                .body(BodyInserters.fromObject(new ClinicDto("Clinic Example", new ArrayList<Doctor>() {})))
+                .body(BodyInserters.fromObject(new ClinicDto("Clinic Example", null)))
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(ClinicDto.class).returnResult().getResponseBody();
         assertNotNull(clinicDto);
-        assertNotNull(clinicDto.getDoctorList());
+        assertNotNull(clinicDto.getName());
         assertEquals("Clinic Example", clinicDto.getName());
     }
 
