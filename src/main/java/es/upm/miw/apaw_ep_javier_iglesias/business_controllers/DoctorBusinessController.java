@@ -3,6 +3,7 @@ package es.upm.miw.apaw_ep_javier_iglesias.business_controllers;
 import es.upm.miw.apaw_ep_javier_iglesias.daos.DoctorDao;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Doctor;
 import es.upm.miw.apaw_ep_javier_iglesias.dtos.DoctorDto;
+import es.upm.miw.apaw_ep_javier_iglesias.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -30,5 +31,15 @@ public class DoctorBusinessController {
         return this.doctorDao.findAll().stream()
                 .filter(p -> p.getName().startsWith(query))
                 .map(DoctorDto::new).collect(Collectors.toList());
+    }
+
+    public void patch(String id, DoctorDto doctorDto) {
+        Doctor doctor = this.findDoctorById(id);
+        doctor.setName(doctorDto.getNewName());
+        this.doctorDao.save(doctor);
+    }
+
+    private Doctor findDoctorById(String id) {
+        return this.doctorDao.findById(id).orElseThrow(() -> new NotFoundException("Doctor id: " + id));
     }
 }

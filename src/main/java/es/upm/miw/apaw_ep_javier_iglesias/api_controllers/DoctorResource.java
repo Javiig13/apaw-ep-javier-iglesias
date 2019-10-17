@@ -10,10 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping(DoctorResource.DOCTORS)
-public class DoctorResource {
+class DoctorResource {
 
     static final String DOCTORS = "/doctors";
     static final String SEARCH = "/search";
+    private static final String ID_ID = "/{id}";
 
     private DoctorBusinessController doctorBusinessController;
 
@@ -34,5 +35,11 @@ public class DoctorResource {
             throw new BadRequestException("query param q is incorrect, missing 'name='");
         }
         return this.doctorBusinessController.findByDoctorNameStartsWith(q.split("=")[1]);
+    }
+
+    @PatchMapping(value = ID_ID)
+    public void patch(@PathVariable String id, @RequestBody DoctorDto doctorDto) {
+        doctorDto.validateNewValue();
+        this.doctorBusinessController.patch(id, doctorDto);
     }
 }

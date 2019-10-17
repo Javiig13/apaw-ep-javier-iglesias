@@ -12,7 +12,9 @@ public class ClinicBusinessController {
     private ClinicDao clinicDao;
 
     @Autowired
-    public ClinicBusinessController(ClinicDao clinicDao) { this.clinicDao = clinicDao; }
+    public ClinicBusinessController(ClinicDao clinicDao) {
+        this.clinicDao = clinicDao;
+    }
 
     public ClinicDto create(ClinicDto clinicDto) {
         Clinic clinic = new Clinic(clinicDto.getName(), clinicDto.getDoctorList());
