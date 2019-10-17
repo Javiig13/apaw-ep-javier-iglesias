@@ -12,6 +12,7 @@ public class OfficeResource {
     static final String OFFICES = "/offices";
     static final String ID_ID = "/{id}";
     static final String SQUARE_METERS = "/squareMeters";
+    static final String SEARCH = "/search";
 
     private OfficeBusinessController officeBusinessController;
 

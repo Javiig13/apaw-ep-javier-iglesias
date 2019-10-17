@@ -54,7 +54,7 @@ public class ClinicDto {
     }
 
     public void validate() {
-        if (name.isEmpty() || doctorList != null) {
+        if (name.isEmpty()) {
             throw new BadRequestException("Incomplete DoctorDto. ");
         }
     }

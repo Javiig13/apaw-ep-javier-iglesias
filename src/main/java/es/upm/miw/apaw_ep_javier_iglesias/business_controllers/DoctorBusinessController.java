@@ -6,6 +6,9 @@ import es.upm.miw.apaw_ep_javier_iglesias.dtos.DoctorDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Controller
 public class DoctorBusinessController {
 
@@ -21,5 +24,11 @@ public class DoctorBusinessController {
                 doctorDto.getInternals());
         this.doctorDao.save(doctor);
         return new DoctorDto(doctor);
+    }
+
+    public List<DoctorDto> findByDoctorNameStartsWith(String query) {
+        return this.doctorDao.findAll().stream()
+                .filter(p -> p.getName().startsWith(query))
+                .map(DoctorDto::new).collect(Collectors.toList());
     }
 }

@@ -1,14 +1,11 @@
 package es.upm.miw.apaw_ep_javier_iglesias.api_controllers;
 
 import es.upm.miw.apaw_ep_javier_iglesias.ApiTestConfig;
-import es.upm.miw.apaw_ep_javier_iglesias.documents.Doctor;
 import es.upm.miw.apaw_ep_javier_iglesias.dtos.ClinicDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
