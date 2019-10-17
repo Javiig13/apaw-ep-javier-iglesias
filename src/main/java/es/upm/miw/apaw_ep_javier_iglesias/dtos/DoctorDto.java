@@ -6,6 +6,7 @@ import es.upm.miw.apaw_ep_javier_iglesias.exceptions.BadRequestException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DoctorDto {
 
@@ -17,13 +18,13 @@ public class DoctorDto {
 
     private LocalDateTime collegiateDate;
 
-    private ArrayList<Internal> internals;
+    private List<Internal> internals;
 
     public DoctorDto() {
         //empty
     }
 
-    public DoctorDto(String name, String collegiateNumber, LocalDateTime collegiateDate, ArrayList<Internal> internals) {
+    public DoctorDto(String name, String collegiateNumber, LocalDateTime collegiateDate, List<Internal> internals) {
         this.name = name;
         this.collegiateNumber = collegiateNumber;
         this.collegiateDate = collegiateDate;
@@ -70,7 +71,7 @@ public class DoctorDto {
         this.collegiateDate = collegiateDate;
     }
 
-    public ArrayList<Internal> getInternals() {
+    public List<Internal> getInternals() {
         return internals;
     }
 
@@ -80,7 +81,7 @@ public class DoctorDto {
 
     public void validate() {
         if (name.isEmpty() || collegiateDate.isAfter(LocalDateTime.now()) ||
-                collegiateNumber.isEmpty()|| internals.isEmpty()) {
+                collegiateNumber.isEmpty() || internals.isEmpty()) {
             throw new BadRequestException("Incomplete DoctorDto. ");
         }
     }

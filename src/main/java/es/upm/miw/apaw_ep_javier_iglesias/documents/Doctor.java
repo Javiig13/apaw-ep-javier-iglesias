@@ -3,7 +3,7 @@ package es.upm.miw.apaw_ep_javier_iglesias.documents;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Doctor {
 
@@ -16,9 +16,9 @@ public class Doctor {
 
     private LocalDateTime collegiateDate;
 
-    private ArrayList<Internal> internals;
+    private List<Internal> internals;
 
-    public Doctor(String name, String collegiateNumber, LocalDateTime collegiateDate, ArrayList<Internal> internals) {
+    public Doctor(String name, String collegiateNumber, LocalDateTime collegiateDate, List<Internal> internals) {
         this.name = name;
         this.collegiateNumber = collegiateNumber;
         this.collegiateDate = collegiateDate;
@@ -41,7 +41,7 @@ public class Doctor {
         return collegiateDate;
     }
 
-    public ArrayList<Internal> getInternals() {
+    public List<Internal> getInternals() {
         return internals;
     }
 
