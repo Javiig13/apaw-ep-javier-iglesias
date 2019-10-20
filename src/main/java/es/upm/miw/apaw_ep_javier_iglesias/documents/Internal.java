@@ -13,7 +13,8 @@ public class Internal {
     public Internal() {
     }
 
-    public Internal(String name, Boolean isActive) {
+    public Internal(String id, String name, Boolean isActive) {
+        this.id = id;
         this.name = name;
         this.isActive = isActive;
     }

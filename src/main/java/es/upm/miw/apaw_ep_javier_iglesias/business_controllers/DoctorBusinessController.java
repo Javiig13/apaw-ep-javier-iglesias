@@ -39,7 +39,7 @@ public class DoctorBusinessController {
         this.doctorDao.save(doctor);
     }
 
-    private Doctor findDoctorById(String id) {
+    public Doctor findDoctorById(String id) {
         return this.doctorDao.findById(id).orElseThrow(() -> new NotFoundException("Doctor id: " + id));
     }
 }

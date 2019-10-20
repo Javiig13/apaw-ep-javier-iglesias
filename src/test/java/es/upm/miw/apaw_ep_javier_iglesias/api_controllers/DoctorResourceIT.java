@@ -23,7 +23,7 @@ class DoctorResourceIT {
     @Test
     void testCreate() {
         ArrayList<Internal> internals = new ArrayList<Internal>() {{
-            add(new Internal("Javier", true));
+            add(new Internal("1", "Javier", true));
         }};
 
         DoctorDto doctorDto = this.webTestClient
@@ -66,5 +66,34 @@ class DoctorResourceIT {
                 .expectBodyList(DoctorDto.class)
                 .returnResult().getResponseBody();
         assertFalse(Objects.requireNonNull(doctors).isEmpty());
+    }
+
+    DoctorDto createDoctorWithInternals() {
+        Internal firstInternal = new Internal("1", "Pedro", true);
+        Internal secondInternal = new Internal("2", "Juanito", true);
+
+        List<Internal> internals = new ArrayList<Internal>() {{
+            add(firstInternal);
+            add(secondInternal);
+        }};
+
+        return this.webTestClient
+                .post().uri(DoctorResource.DOCTORS)
+                .body(BodyInserters.fromObject(
+                        new DoctorDto("Eustaquio", "50", LocalDateTime.now(), internals)))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(DoctorDto.class).returnResult().getResponseBody();
+    }
+
+    @Test
+    void deleteInternalById() {
+        DoctorDto created = createDoctorWithInternals();
+
+        this.webTestClient
+                .delete().uri(DoctorResource.DOCTORS + DoctorResource.ID_ID
+                + DoctorResource.INTERNALS + DoctorResource.ID_INTERNAL, created.getId(), "2")
+                .exchange()
+                .expectStatus().isOk();
     }
 }
