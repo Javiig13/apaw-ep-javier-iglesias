@@ -5,6 +5,7 @@ import es.upm.miw.apaw_ep_javier_iglesias.daos.DoctorDao;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Doctor;
 import es.upm.miw.apaw_ep_javier_iglesias.dtos.DoctorDto;
 import es.upm.miw.apaw_ep_javier_iglesias.exceptions.BadRequestException;
+import es.upm.miw.apaw_ep_javier_iglesias.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,6 +53,9 @@ class DoctorResource {
     @DeleteMapping(value = ID_ID + INTERNALS + ID_INTERNAL)
     public void delete(@PathVariable String id, @PathVariable String idInternal) {
         Doctor doctor = doctorBusinessController.findDoctorById(id);
+        if (doctor == null) {
+            throw new NotFoundException("The doctor has not been found.");
+        }
         doctor.getInternals().removeIf(internal -> internal.getId().equals(idInternal));
         this.doctorDao.save(doctor);
     }
