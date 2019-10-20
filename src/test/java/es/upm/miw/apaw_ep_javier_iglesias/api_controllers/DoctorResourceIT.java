@@ -3,6 +3,7 @@ package es.upm.miw.apaw_ep_javier_iglesias.api_controllers;
 import es.upm.miw.apaw_ep_javier_iglesias.ApiTestConfig;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Internal;
 import es.upm.miw.apaw_ep_javier_iglesias.dtos.DoctorDto;
+import es.upm.miw.apaw_ep_javier_iglesias.exceptions.ErrorMessage;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.reactive.server.WebTestClient;
@@ -110,5 +111,18 @@ class DoctorResourceIT {
                         .returnResult().getResponseBody();
         assertTrue(Objects.requireNonNull(list).size() > 0);
         assertNotNull(list.get(0).getId());
+    }
+
+    @Test
+    void testPatchName() {
+        DoctorDto doctorDto = new DoctorDto("Juan", "10", LocalDateTime.now(), null);
+
+        try {
+            doctorDto.validate();
+        } catch (Exception ex) {
+            ErrorMessage error = new ErrorMessage(ex, DoctorResource.DOCTORS);
+            System.out.println(error.toString());
+            assertNull(doctorDto);
+        }
     }
 }

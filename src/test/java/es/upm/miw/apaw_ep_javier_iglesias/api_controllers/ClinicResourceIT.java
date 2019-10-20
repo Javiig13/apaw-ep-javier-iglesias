@@ -27,5 +27,4 @@ class ClinicResourceIT {
         assertNotNull(clinicDto.getName());
         assertEquals("Clinic Example", clinicDto.getName());
     }
-
 }
