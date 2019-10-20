@@ -104,15 +104,17 @@ public class DoctorDto {
     }
 
     public void validate() {
-        if (name.isEmpty() || collegiateDate.isAfter(LocalDateTime.now()) || collegiateNumber.isEmpty()) {
-            throw new BadRequestException("Incomplete DoctorDto. ");
+        if (!name.isEmpty() && !collegiateDate.isAfter(LocalDateTime.now()) && !collegiateNumber.isEmpty()) {
+            return;
         }
+        throw new BadRequestException("Incomplete DoctorDto. ");
     }
 
     public void validateNewValue() {
-        if (newName.isEmpty() || (oldName.equals(newName))) {
-            throw new BadRequestException("Can't patch, new value is undefined or is the same that old value.");
+        if (!newName.isEmpty() && (!oldName.equals(newName))) {
+            return;
         }
+        throw new BadRequestException("Can't patch, new value is undefined or is the same that old value.");
     }
 
     @Override
