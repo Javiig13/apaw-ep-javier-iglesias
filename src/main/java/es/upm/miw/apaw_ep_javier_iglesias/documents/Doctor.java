@@ -48,15 +48,4 @@ public class Doctor {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Override
-    public String toString() {
-        return "Doctor{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", collegiateNumber='" + collegiateNumber + '\'' +
-                ", collegiateDate=" + collegiateDate +
-                ", internals=" + internals +
-                '}';
-    }
 }

@@ -24,12 +24,4 @@ public class Office {
     public void setSquareMeters(Integer squareMeters) {
         this.squareMeters = squareMeters;
     }
-
-    @Override
-    public String toString() {
-        return "Office{" +
-                "id='" + id + '\'' +
-                ", squareMeters=" + squareMeters +
-                '}';
-    }
 }

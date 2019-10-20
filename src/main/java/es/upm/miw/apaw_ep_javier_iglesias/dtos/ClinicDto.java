@@ -58,13 +58,4 @@ public class ClinicDto {
             throw new BadRequestException("Incomplete DoctorDto. ");
         }
     }
-
-    @Override
-    public String toString() {
-        return "ClinicDto{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", doctorList=" + doctorList +
-                '}';
-    }
 }

@@ -8,22 +8,15 @@ public class VersionDto {
         // Empty for framework
     }
 
-    public VersionDto(String version) {
+    VersionDto(String version) {
         this.version = version;
     }
 
-    public String getVersion() {
+    String getVersion() {
         return version;
     }
 
     public void setVersion(String version) {
         this.version = version;
-    }
-
-    @Override
-    public String toString() {
-        return "VersionDto{" +
-                "version='" + version + '\'' +
-                '}';
     }
 }

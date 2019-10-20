@@ -29,13 +29,4 @@ public class Clinic {
     public List<Doctor> getDoctorList() {
         return doctorList;
     }
-
-    @Override
-    public String toString() {
-        return "Clinic{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", doctorList=" + doctorList +
-                '}';
-    }
 }
