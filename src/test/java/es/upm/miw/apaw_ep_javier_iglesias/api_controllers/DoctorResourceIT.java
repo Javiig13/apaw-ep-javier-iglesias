@@ -96,4 +96,19 @@ class DoctorResourceIT {
                 .exchange()
                 .expectStatus().isOk();
     }
+
+    @Test
+    void ReadAll() {
+        createDoctorWithInternals();
+
+        List<DoctorDto> list =
+                this.webTestClient
+                        .get().uri(DoctorResource.DOCTORS)
+                        .exchange()
+                        .expectStatus().isOk()
+                        .expectBodyList(DoctorDto.class)
+                        .returnResult().getResponseBody();
+        assertTrue(Objects.requireNonNull(list).size() > 0);
+        assertNotNull(list.get(0).getId());
+    }
 }

@@ -55,4 +55,9 @@ class DoctorResource {
         doctor.getInternals().removeIf(internal -> internal.getId().equals(idInternal));
         this.doctorDao.save(doctor);
     }
+
+    @GetMapping
+    public List<DoctorDto> readAll() {
+        return this.doctorBusinessController.readAll();
+    }
 }

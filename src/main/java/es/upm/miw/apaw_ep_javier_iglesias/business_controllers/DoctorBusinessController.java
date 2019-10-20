@@ -42,4 +42,9 @@ public class DoctorBusinessController {
     public Doctor findDoctorById(String id) {
         return this.doctorDao.findById(id).orElseThrow(() -> new NotFoundException("Doctor id: " + id));
     }
+
+    public List<DoctorDto> readAll() {
+        List<Doctor> doctors = this.doctorDao.findAll();
+        return doctors.stream().map(DoctorDto::new).collect(Collectors.toList());
+    }
 }
