@@ -18,6 +18,9 @@ public class Doctor {
 
     private List<Internal> internals;
 
+    public Doctor() {
+    }
+
     public Doctor(String name, String collegiateNumber, LocalDateTime collegiateDate, List<Internal> internals) {
         this.name = name;
         this.collegiateNumber = collegiateNumber;
@@ -47,5 +50,17 @@ public class Doctor {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setCollegiateNumber(String collegiateNumber) {
+        this.collegiateNumber = collegiateNumber;
+    }
+
+    public void setCollegiateDate(LocalDateTime collegiateDate) {
+        this.collegiateDate = collegiateDate;
+    }
+
+    public void setInternals(List<Internal> internals) {
+        this.internals = internals;
     }
 }

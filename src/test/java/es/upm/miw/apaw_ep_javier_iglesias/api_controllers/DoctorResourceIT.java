@@ -3,7 +3,6 @@ package es.upm.miw.apaw_ep_javier_iglesias.api_controllers;
 import es.upm.miw.apaw_ep_javier_iglesias.ApiTestConfig;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Internal;
 import es.upm.miw.apaw_ep_javier_iglesias.dtos.DoctorDto;
-import es.upm.miw.apaw_ep_javier_iglesias.exceptions.ErrorMessage;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.reactive.server.WebTestClient;
