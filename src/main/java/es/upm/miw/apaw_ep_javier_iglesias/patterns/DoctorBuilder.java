@@ -16,6 +16,7 @@ public class DoctorBuilder implements IBuilder {
     private List<Internal> internals;
 
     public DoctorBuilder() {
+        //empty for builder construction on test.
     }
 
     public DoctorBuilder withName(String name) {
