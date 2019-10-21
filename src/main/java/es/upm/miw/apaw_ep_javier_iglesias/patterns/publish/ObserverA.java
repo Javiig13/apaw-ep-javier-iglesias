@@ -12,6 +12,6 @@ public class ObserverA implements Observer {
 
     @Override
     public void update() {
-        LogManager.getLogger(this.getClass()).info("Observer A: receiving changes." + this.subject.getOffice());
+        LogManager.getLogger(this.getClass()).info("Observer A receive changes.");
     }
 }
