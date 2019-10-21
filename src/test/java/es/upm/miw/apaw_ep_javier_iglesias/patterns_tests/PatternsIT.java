@@ -14,7 +14,7 @@ public class PatternsIT {
 
     @Test
     public void testCreateDoctorWithBuilder() {
-        DoctorBuilder doctorBuilder = new DoctorBuilder("abcdef123456879");
+        DoctorBuilder doctorBuilder = new DoctorBuilder();
 
         Doctor doctor = doctorBuilder
                 .withName("Dr. Fernandez")

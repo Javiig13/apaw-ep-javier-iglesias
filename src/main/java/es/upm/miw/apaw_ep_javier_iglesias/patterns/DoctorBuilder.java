@@ -7,8 +7,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class DoctorBuilder implements IBuilder {
-    private String id;
-
     private String name;
 
     private String collegiateNumber;
@@ -17,8 +15,7 @@ public class DoctorBuilder implements IBuilder {
 
     private List<Internal> internals;
 
-    public DoctorBuilder(String id) {
-        this.id = id;
+    public DoctorBuilder() {
     }
 
     public DoctorBuilder withName(String name) {
