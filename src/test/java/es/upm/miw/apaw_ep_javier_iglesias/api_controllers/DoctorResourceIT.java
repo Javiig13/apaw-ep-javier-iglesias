@@ -112,17 +112,4 @@ class DoctorResourceIT {
         assertTrue(Objects.requireNonNull(list).size() > 0);
         assertNotNull(list.get(0).getId());
     }
-
-    @Test
-    void testPatchName() {
-        DoctorDto doctorDto = new DoctorDto("Juan", "10", LocalDateTime.now(), null);
-
-        try {
-            doctorDto.validate();
-        } catch (Exception ex) {
-            ErrorMessage error = new ErrorMessage(ex, DoctorResource.DOCTORS);
-            System.out.println(error.toString());
-            assertNull(doctorDto);
-        }
-    }
 }
