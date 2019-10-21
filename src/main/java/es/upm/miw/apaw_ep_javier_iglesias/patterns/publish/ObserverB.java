@@ -1,4 +1,4 @@
-package es.upm.miw.apaw_ep_javier_iglesias.patterns.Publish;
+package es.upm.miw.apaw_ep_javier_iglesias.patterns.publish;
 
 
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +13,6 @@ public class ObserverB implements Observer {
 
     @Override
     public void update() {
-        LogManager.getLogger(this.getClass()).info("Observer B: receiving changes." +
-                " Now the office properties are as follows: " + this.subject.getOffice().toString());
+        LogManager.getLogger(this.getClass()).info("Observer B: receiving changes." + this.subject.getOffice().toString());
     }
 }

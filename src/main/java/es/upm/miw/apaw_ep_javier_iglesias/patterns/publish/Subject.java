@@ -1,4 +1,4 @@
-package es.upm.miw.apaw_ep_javier_iglesias.patterns.Publish;
+package es.upm.miw.apaw_ep_javier_iglesias.patterns.publish;
 
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Office;
 

@@ -4,9 +4,9 @@ import es.upm.miw.apaw_ep_javier_iglesias.ApiTestConfig;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Doctor;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Office;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.DoctorBuilder;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.Publish.ObserverA;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.Publish.ObserverB;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.Publish.Subject;
+import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverA;
+import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverB;
+import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.Subject;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
@@ -32,9 +32,13 @@ public class PatternsIT {
     public void testPublishChangesOffice() {
         Subject subject = new Subject();
 
+        Office office = new Office(99);
+
         new ObserverA(subject);
         new ObserverB(subject);
 
-        subject.setOffice(new Office(99));
+        subject.setOffice(office);
+
+        assertNotNull(office);
     }
 }
