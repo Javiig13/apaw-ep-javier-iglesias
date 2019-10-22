@@ -1,5 +1,6 @@
 package es.upm.miw.apaw_ep_javier_iglesias.patterns_tests;
 
+import es.upm.miw.apaw_ep_javier_iglesias.documents.Office;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.Observable;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverA;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverB;
@@ -9,31 +10,21 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ObservableTest {
+class SubjectTest {
 
-    private Observable observable;
-    private ObserverA observerA;
-    private ObserverB observerB;
+    private Office office;
     private Subject subject;
 
     @BeforeEach
     void setUp() {
-        observable = new Observable();
         subject = new Subject();
-        observerA = new ObserverA(subject);
-        observerB = new ObserverB(subject);
+        office = new Office(56);
+        subject.setOffice(office);
+        assertNotNull(office);
     }
 
     @Test
-    void addObserver() {
-        observable.addObserver(observerA);
-        observable.addObserver(observerB);
-        assertNotNull(observable);
-    }
-
-    @Test
-    void removeObserver() {
-        observable.removeObserver(observerA);
-        assertNotNull(observable);
+    void getOffice() {
+        assertNotNull(subject.getOffice());
     }
 }

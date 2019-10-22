@@ -6,7 +6,7 @@ public class Subject extends Observable {
 
     private Office office;
 
-    Office getOffice() {
+    public Office getOffice() {
         return office;
     }
 
