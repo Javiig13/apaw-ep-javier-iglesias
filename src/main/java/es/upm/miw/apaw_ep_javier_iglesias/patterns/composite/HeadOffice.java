@@ -1,5 +1,6 @@
 package es.upm.miw.apaw_ep_javier_iglesias.patterns.composite;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HeadOffice implements Office {
@@ -8,9 +9,9 @@ public class HeadOffice implements Office {
 
     private List<Office> officeList;
 
-    public HeadOffice(Integer squareMeters, List<Office> officeList) {
+    public HeadOffice(Integer squareMeters) {
         this.squareMeters = squareMeters;
-        this.officeList = officeList;
+        this.officeList = new ArrayList<>();
     }
 
     @Override

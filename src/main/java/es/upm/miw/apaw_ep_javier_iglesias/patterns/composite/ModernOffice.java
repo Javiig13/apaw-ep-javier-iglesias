@@ -1,12 +1,14 @@
 package es.upm.miw.apaw_ep_javier_iglesias.patterns.composite;
 
+import org.apache.logging.log4j.LogManager;
+
 public class ModernOffice implements Office {
 
     private Integer squareMeters;
 
     @Override
     public void printSquareMeters() {
-        System.out.println(getClass().getSimpleName());
+        LogManager.getLogger(getClass().getSimpleName());
     }
 
     public ModernOffice() {
