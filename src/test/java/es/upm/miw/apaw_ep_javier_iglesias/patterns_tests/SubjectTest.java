@@ -1,14 +1,11 @@
 package es.upm.miw.apaw_ep_javier_iglesias.patterns_tests;
 
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Office;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.Observable;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverA;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverB;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.Subject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class SubjectTest {
 

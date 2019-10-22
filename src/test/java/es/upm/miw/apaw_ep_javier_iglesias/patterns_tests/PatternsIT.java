@@ -3,7 +3,7 @@ package es.upm.miw.apaw_ep_javier_iglesias.patterns_tests;
 import es.upm.miw.apaw_ep_javier_iglesias.ApiTestConfig;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Doctor;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Office;
-import es.upm.miw.apaw_ep_javier_iglesias.patterns.DoctorBuilder;
+import es.upm.miw.apaw_ep_javier_iglesias.patterns.builder.DoctorBuilder;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverA;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.ObserverB;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.publish.Subject;

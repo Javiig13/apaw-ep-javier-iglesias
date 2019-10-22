@@ -2,6 +2,7 @@ package es.upm.miw.apaw_ep_javier_iglesias.patterns;
 
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Doctor;
 import es.upm.miw.apaw_ep_javier_iglesias.documents.Internal;
+import es.upm.miw.apaw_ep_javier_iglesias.patterns.builder.DoctorBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
