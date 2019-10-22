@@ -5,13 +5,15 @@ import es.upm.miw.apaw_ep_javier_iglesias.patterns.composite.ModernOffice;
 import es.upm.miw.apaw_ep_javier_iglesias.patterns.composite.OldOffice;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class OfficeCompositeTest {
 
     @Test
     void createComposite() {
         ModernOffice modernOffice = new ModernOffice(70);
         OldOffice oldOffice = new OldOffice(30);
-        HeadOffice headOffice = new HeadOffice(500);
+        HeadOffice headOffice = new HeadOffice();
 
         headOffice.addOffice(modernOffice);
         headOffice.addOffice(oldOffice);
@@ -21,5 +23,7 @@ class OfficeCompositeTest {
         headOffice.removeOffice(oldOffice);
 
         headOffice.printSquareMeters();
+
+        assertTrue(headOffice.getOfficeList().size() > 0);
     }
 }

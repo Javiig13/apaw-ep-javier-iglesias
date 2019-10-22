@@ -5,12 +5,9 @@ import java.util.List;
 
 public class HeadOffice implements Office {
 
-    private Integer squareMeters;
-
     private List<Office> officeList;
 
-    public HeadOffice(Integer squareMeters) {
-        this.squareMeters = squareMeters;
+    public HeadOffice() {
         this.officeList = new ArrayList<>();
     }
 
@@ -25,5 +22,9 @@ public class HeadOffice implements Office {
 
     public void removeOffice(Office office) {
         officeList.remove(office);
+    }
+
+    public List<Office> getOfficeList() {
+        return officeList;
     }
 }
