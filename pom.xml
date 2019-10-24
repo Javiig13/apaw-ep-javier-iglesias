@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <name>${project.groupId}.${project.artifactId}</name>
-    <description>API Rest Architecture</description>
+    <description>API Rest Architecture MIW</description>
 
     <licenses>
         <license>
